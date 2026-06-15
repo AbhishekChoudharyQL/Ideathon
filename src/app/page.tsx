@@ -3,6 +3,8 @@ import Link from "next/link";
 import IdeasHub from "@/components/IdeasHub";
 import { getIdeas } from "@/lib/supabase";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Ideas Hub | Internal Innovation Showcase",
   description: "Explore and discover innovation ideas submitted by the team.",
