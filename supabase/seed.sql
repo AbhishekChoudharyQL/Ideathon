@@ -1,0 +1,16 @@
+-- Seed innovation ideas into the database
+INSERT INTO ideas (id, name, owner, category, confidence, problem, solution) VALUES
+  ('blazion-fetch', 'Blazion Fetch', 'Anshul Jha', 'Frontend/UI', 'Very Risky', 'Dependency on third-party libraries like Axios and TanStack.', 'A lightweight API fetch library with retry, caching, upload progress and download progress support.'),
+  ('lumen', 'Lumen', 'Shivam Uttam', 'AI/LLMs', 'Tight but Ok', 'People often neglect emotional reflection and gratitude in busy lives.', 'An AI journaling companion that provides feedback, emotional guidance and personalized experiences.'),
+  ('deepfake-detection', 'Deep Fake Detection', 'Krishna Nand Rai', 'AI/LLMs', 'Tight but Ok', 'Increasing difficulty in distinguishing AI-generated media from real content.', 'Machine learning models to detect manipulated images, videos and audio.'),
+  ('workflow-ai-auditor', 'Workflow AI Auditor', 'Mayank Ranjan', 'AI/LLMs', 'Tight but Ok', 'Organizations struggle to identify where AI can add the most value in workflows.', 'Analyze workflows and recommend automation opportunities, AI integration points and implementation roadmaps.'),
+  ('crowdpulse', 'Crowdpulse', 'Aniket Rao', 'Mobile', 'Might Stretch', 'Communication becomes impossible in crowded places due to network congestion.', 'Peer-to-peer messaging over Bluetooth and WiFi Direct using mesh networking.'),
+  ('jerry-ai', 'JerryAI', 'Aryan Singhal', 'Mobile', 'Total Feasible', 'Technical interviews often test recall under pressure rather than actual knowledge.', 'AI-powered interview copilot that generates contextual answers and explanations in real time.'),
+  ('ridewise-ai', 'RideWise AI', 'Isha Parihar', 'Mobile', 'Pretty Doable', 'Users must manually compare fares across ride-hailing apps.', 'Aggregates ride options and recommends the best choice based on cost, ETA and value.'),
+  ('parkconnect', 'ParkConnect', 'Ankita Saxena', 'Mobile', 'Tight but Ok', 'Parking disputes and privacy concerns when contacting vehicle owners.', 'QR-based privacy-first communication system for vehicle owners and parking users.'),
+  ('companion-247', '24x7 Companion', 'Abhishek Choudhary', 'Mobile', 'Tight but Ok', 'Limited assistive AI solutions for visually and hearing impaired individuals.', 'Speech-first AI assistant with accessibility-focused communication and emergency support.'),
+  ('crashiq', 'CrashIQ', 'Prateek Kumar Maurya', 'Mobile', 'Might Stretch', 'Developers spend excessive time investigating application crashes.', 'AI platform that analyzes crash reports, identifies root causes and generates Jira tickets.'),
+  ('synergy-arena', 'Synergy Arena', 'Hemant', 'AI/LLMs', 'Might Stretch', 'Need for stronger engagement and marketing experiences.', 'AI-powered engagement and marketing platform.'),
+  ('darpan', 'Darpan', 'Nishtha Anand', 'AI/LLMs', 'Tight but Ok', 'News consumers struggle to understand bias and differing narratives.', 'Aggregates news from multiple sources and presents balanced perspectives.'),
+  ('scamshield-ai', 'ScamShield AI', 'Ankur Kumar', 'Mobile', 'Pretty Doable', 'Increasing digital fraud and phishing attacks targeting vulnerable users.', 'AI assistant that analyzes messages, emails and links for scam risk.')
+ON CONFLICT (id) DO NOTHING;

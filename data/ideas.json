@@ -1,0 +1,119 @@
+[
+  {
+    "id": "blazion-fetch",
+    "name": "Blazion Fetch",
+    "owner": "Anshul Jha",
+    "category": "Frontend/UI",
+    "confidence": "Very Risky",
+    "problem": "Dependency on third-party libraries like Axios and TanStack.",
+    "solution": "A lightweight API fetch library with retry, caching, upload progress and download progress support."
+  },
+  {
+    "id": "lumen",
+    "name": "Lumen",
+    "owner": "Shivam Uttam",
+    "category": "AI/LLMs",
+    "confidence": "Tight but Ok",
+    "problem": "People often neglect emotional reflection and gratitude in busy lives.",
+    "solution": "An AI journaling companion that provides feedback, emotional guidance and personalized experiences."
+  },
+  {
+    "id": "deepfake-detection",
+    "name": "Deep Fake Detection",
+    "owner": "Krishna Nand Rai",
+    "category": "AI/LLMs",
+    "confidence": "Tight but Ok",
+    "problem": "Increasing difficulty in distinguishing AI-generated media from real content.",
+    "solution": "Machine learning models to detect manipulated images, videos and audio."
+  },
+  {
+    "id": "workflow-ai-auditor",
+    "name": "Workflow AI Auditor",
+    "owner": "Mayank Ranjan",
+    "category": "AI/LLMs",
+    "confidence": "Tight but Ok",
+    "problem": "Organizations struggle to identify where AI can add the most value in workflows.",
+    "solution": "Analyze workflows and recommend automation opportunities, AI integration points and implementation roadmaps."
+  },
+  {
+    "id": "crowdpulse",
+    "name": "Crowdpulse",
+    "owner": "Aniket Rao",
+    "category": "Mobile",
+    "confidence": "Might Stretch",
+    "problem": "Communication becomes impossible in crowded places due to network congestion.",
+    "solution": "Peer-to-peer messaging over Bluetooth and WiFi Direct using mesh networking."
+  },
+  {
+    "id": "jerry-ai",
+    "name": "JerryAI",
+    "owner": "Aryan Singhal",
+    "category": "Mobile",
+    "confidence": "Total Feasible",
+    "problem": "Technical interviews often test recall under pressure rather than actual knowledge.",
+    "solution": "AI-powered interview copilot that generates contextual answers and explanations in real time."
+  },
+  {
+    "id": "ridewise-ai",
+    "name": "RideWise AI",
+    "owner": "Isha Parihar",
+    "category": "Mobile",
+    "confidence": "Pretty Doable",
+    "problem": "Users must manually compare fares across ride-hailing apps.",
+    "solution": "Aggregates ride options and recommends the best choice based on cost, ETA and value."
+  },
+  {
+    "id": "parkconnect",
+    "name": "ParkConnect",
+    "owner": "Ankita Saxena",
+    "category": "Mobile",
+    "confidence": "Tight but Ok",
+    "problem": "Parking disputes and privacy concerns when contacting vehicle owners.",
+    "solution": "QR-based privacy-first communication system for vehicle owners and parking users."
+  },
+  {
+    "id": "companion-247",
+    "name": "24x7 Companion",
+    "owner": "Abhishek Choudhary",
+    "category": "Mobile",
+    "confidence": "Tight but Ok",
+    "problem": "Limited assistive AI solutions for visually and hearing impaired individuals.",
+    "solution": "Speech-first AI assistant with accessibility-focused communication and emergency support."
+  },
+  {
+    "id": "crashiq",
+    "name": "CrashIQ",
+    "owner": "Prateek Kumar Maurya",
+    "category": "Mobile",
+    "confidence": "Might Stretch",
+    "problem": "Developers spend excessive time investigating application crashes.",
+    "solution": "AI platform that analyzes crash reports, identifies root causes and generates Jira tickets."
+  },
+  {
+    "id": "synergy-arena",
+    "name": "Synergy Arena",
+    "owner": "Hemant",
+    "category": "AI/LLMs",
+    "confidence": "Might Stretch",
+    "problem": "Need for stronger engagement and marketing experiences.",
+    "solution": "AI-powered engagement and marketing platform."
+  },
+  {
+    "id": "darpan",
+    "name": "Darpan",
+    "owner": "Nishtha Anand",
+    "category": "AI/LLMs",
+    "confidence": "Tight but Ok",
+    "problem": "News consumers struggle to understand bias and differing narratives.",
+    "solution": "Aggregates news from multiple sources and presents balanced perspectives."
+  },
+  {
+    "id": "scamshield-ai",
+    "name": "ScamShield AI",
+    "owner": "Ankur Kumar",
+    "category": "Mobile",
+    "confidence": "Pretty Doable",
+    "problem": "Increasing digital fraud and phishing attacks targeting vulnerable users.",
+    "solution": "AI assistant that analyzes messages, emails and links for scam risk."
+  }
+]
