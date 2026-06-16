@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Idea } from "@/types/idea";
+import { VOTING_CLOSED } from "@/lib/config";
 
 interface IdeaCardProps {
   idea: Idea;
@@ -111,16 +112,44 @@ export default function IdeaCard({ idea, onViewDetails, hasVoted, onVote }: Idea
         >
           Details
         </button>
+
+        {/* Vote count badge always visible */}
+        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-card-border bg-card-bg text-sm font-semibold text-foreground shrink-0">
+          <svg className="w-4 h-4 text-accent-color" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+          </svg>
+          {votesCount}
+        </span>
+
         <button
-          onClick={handleVote}
-          disabled={hasVoted || isVoting}
-          className={`flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-lg border transition-all duration-150 shadow-xs cursor-pointer ${
-            hasVoted
+          onClick={VOTING_CLOSED ? undefined : handleVote}
+          disabled={VOTING_CLOSED || hasVoted || isVoting}
+          className={`flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-semibold rounded-lg border transition-all duration-150 shadow-xs ${
+            VOTING_CLOSED
+              ? "bg-muted-text/5 border-card-border text-muted-text cursor-not-allowed"
+              : hasVoted
               ? "bg-emerald-500/10 border-emerald-500/20 text-emerald-600 dark:text-emerald-400 cursor-not-allowed"
-              : "bg-accent-color border-accent-color text-white hover:bg-accent-hover active:scale-98"
+              : "bg-accent-color border-accent-color text-white hover:bg-accent-hover active:scale-98 cursor-pointer"
           }`}
         >
-          {isVoting ? (
+          {VOTING_CLOSED ? (
+            <>
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+              Voting Closed
+            </>
+          ) : isVoting ? (
             <svg
               className="animate-spin h-4 w-4 text-current"
               xmlns="http://www.w3.org/2000/svg"
@@ -157,7 +186,7 @@ export default function IdeaCard({ idea, onViewDetails, hasVoted, onVote }: Idea
                   d="M5 13l4 4L19 7"
                 />
               </svg>
-              Voted ({votesCount})
+              Voted
             </>
           ) : (
             <>
@@ -175,7 +204,7 @@ export default function IdeaCard({ idea, onViewDetails, hasVoted, onVote }: Idea
                   d="M5 15l7-7 7 7"
                 />
               </svg>
-              Vote ({votesCount})
+              Vote
             </>
           )}
         </button>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { createIdea } from "@/lib/supabase";
 import { Category, Confidence } from "@/types/idea";
+import { SUBMISSIONS_CLOSED } from "@/lib/config";
 
 export default function SubmitIdea() {
   const router = useRouter();
@@ -62,6 +63,52 @@ export default function SubmitIdea() {
       setLoading(false);
     }
   };
+
+  if (SUBMISSIONS_CLOSED) {
+    return (
+      <div className="relative min-h-screen flex flex-col bg-background text-foreground">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[400px] pointer-events-none -z-10 opacity-70">
+          <div className="absolute inset-0 bg-radial-[ellipse_80%_50%_at_50%_0%] from-accent-color/15 via-transparent to-transparent dark:from-accent-color/10" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--card-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--card-border)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-35 pointer-events-none -z-20" />
+        <header className="w-full border-b border-card-border/80 bg-background/80 backdrop-blur-md">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <button
+              onClick={() => router.push("/")}
+              className="flex items-center gap-1 text-sm font-semibold text-muted-text hover:text-foreground transition-colors duration-150 cursor-pointer"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Back to Hub
+            </button>
+            <span className="font-extrabold text-sm tracking-tight text-muted-text">Submit Innovation</span>
+          </div>
+        </header>
+        <main className="flex-1 flex items-center justify-center px-4 py-16">
+          <div className="max-w-md w-full text-center space-y-6 p-8 rounded-2xl border border-card-border bg-card-bg shadow-md">
+            <div className="mx-auto flex items-center justify-center w-14 h-14 rounded-full bg-muted-text/10">
+              <svg className="w-7 h-7 text-muted-text" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <div className="space-y-2">
+              <h1 className="text-2xl font-black tracking-tight text-foreground">Submissions Closed</h1>
+              <p className="text-sm text-muted-text leading-relaxed">
+                The idea submission window has ended. Thank you to everyone who participated — the team will review all submitted ideas shortly.
+              </p>
+            </div>
+            <button
+              onClick={() => router.push("/")}
+              className="w-full px-5 py-2.5 rounded-xl bg-accent-color hover:bg-accent-hover text-sm font-semibold text-white transition-colors duration-150 shadow-xs cursor-pointer"
+            >
+              View All Ideas
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen flex flex-col bg-background text-foreground selection:bg-accent-color/20 selection:text-accent-color">
