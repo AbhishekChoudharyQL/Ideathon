@@ -80,3 +80,5 @@ Start the production-built server locally:
 ```bash
 npm run start
 ```
+
+Bring Halvorsen Fleet on our platform.
